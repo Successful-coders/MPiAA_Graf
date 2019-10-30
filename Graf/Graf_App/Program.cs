@@ -30,11 +30,11 @@ namespace Graf_App
             edges.V = second;
             edges.distance = distance;
         }
-        private int Find(int vertex)
+        private int Find(int vertex)//возвращается называние вершины
         {
             return (sets[vertex]);
         }
-        private void Join(int v1, int v2)
+        private void Join(int v1, int v2)//
         {
             if (v1 < v2)
                 sets[v2] = v1;
@@ -42,7 +42,7 @@ namespace Graf_App
                 sets[v1] = v2;
         }
 
-        public void BuildSpanningTree(List<Graf> grafs, int k)
+        public void BuildSpanningTree(List<Graf> grafs, int k)//построение минимального остовного дерева
         {
             Cost = 0;
             int t = 1;
@@ -59,7 +59,7 @@ namespace Graf_App
                     }
             }
         }
-        public void DisplayInfo(int k )
+        public void DisplayInfo(int k )//вывод вершин, которые создают минимальный остов
         {
             Console.WriteLine("The Edges of the Minimum Spanning Tree are:");
             for (int i = 1; i < k; i++)
